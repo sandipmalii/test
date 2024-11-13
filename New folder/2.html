@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(2, 2, 2);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        $(document).ready(function(){
+            // Animate the box's movement
+            $("#box").click(function(){
+                $(this).animate(
+                    {
+                    left: '250px',opacity: '0.5', height: '150px',width: '150px'
+                }, 
+                "slow");
+
+                // After animation completes, reset the box
+                $(this).animate({
+                    left: '0px',
+                    opacity: '1',
+                    height: '100px',
+                    width: '100px'
+                }, "slow");
+            });
+        });
+    </script>
+</body>
+</html>
